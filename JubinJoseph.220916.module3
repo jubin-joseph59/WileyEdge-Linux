@@ -1,0 +1,93 @@
+    1  pwd
+    2  mkdir Algo1
+    3  ls
+    4  cd Algo1
+    5  mkdir config bin logs scripts
+    6  ls
+    7  cd config
+    8  ls
+    9  touch config.config
+   10  touch variables
+   11  ls
+   12  cd ..
+   13  cd scripts
+   14  ls
+   15  touch start.sh
+   16  touch stop.sh admin.sh
+   17  ls
+   18  cd ..
+   19  touch today.log
+   20  ls
+   21  rm "today.log"
+   22  ls
+   23  cd logs
+   24  ls
+   25  touch today.log
+   26  cd ~
+   27  man ls
+   28  ls -1R
+   29  ls -ltR
+   30  ls
+   31  cd Algo1
+   32  ls
+   33  cd config 
+   34  ls
+   35  pwd
+   36  cd ~
+   37  rm /home/ec2-user/Algo1/config/variables
+   38  cd /home/ec2-user/Algo1/config
+   39  ls
+   40  cd ..
+   41  rm -rf bin
+   42  ls
+   43  cd ..
+   44  mkdir /home/ec2-user/Algo1/bin
+   45  ls
+   46  cd Algo1
+   47  ls
+   48  cd ..
+   49  mkdir /home/ec2-user/Algo1/logs/oldlogs
+   50  cd Algo1
+   51  ls
+   52  cd logs
+   53  ls
+   54  cd oldlogs
+   55  ls
+   56  mkdir 2017 2018 2019
+   57  ls
+   58  pwd
+   59  touch /home/ec2-user/Algo1/logs/oldlogs
+   60  ls
+   61  touch /home/ec2-user/Algo1/logs/oldlogs/2017/2017.log
+   62  ls
+   63  cd 2017
+   64  ls
+   65  cd ..
+   66  touch /home/ec2-user/Algo1/logs/oldlogs/2018/2018.log
+   67  ls
+   68  cd ..
+   69  touch /home/ec2-user/Algo1/logs/oldlogs/2019/2019.log
+   70  cd oldlogs
+   71  cd 2018
+   72  ls
+   73  cd ..
+   74  cd 2019
+   75  ls
+   76  cd ~
+   77  pwd
+   78  rm -rf /home/ec2-user/Algo1/logs/oldlogs
+   79  ls
+   80  cd Algo1
+   81  ls
+   82  cd logs
+   83  ls
+   84  cd ~
+   85  pwd
+   86  find /home/ec2-user -name *.sh
+   87  cd /home/ec2-user/Algo1/scripts
+   88  ls
+   89  rm s*.sh
+   90  ls
+   91  cd ~
+   92  history 
+   93  history > JubinJoseph.220916.module3
