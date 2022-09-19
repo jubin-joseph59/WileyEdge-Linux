@@ -1,0 +1,61 @@
+    1  ls
+    2  rmdir scri[ts
+    3  ls
+    4  rmdir scripts
+    5  ls
+    6  cd WileyEdge-Linux
+    7  cd
+    8  STOCK="AAPL"
+    9  echo $STOCK
+   10  STOCK+="_US"
+   11  echo $STOCK
+   12  PRICE=290.84
+   13  echo "The current price of $STOCK is $PRICE"
+   14  WHOAMI=$USER
+   15  echo $WHOAMI
+   16  SERVERTYPE=$(uname)
+   17  echo "$SERVERTYPE"
+   18  CMD="uname -i"
+   19  echo $CMD
+   20  echo `$CMD`
+   21  cd ~
+   22  mkdir scripts
+   23  echo $PATH
+   24  export PATH=$PATH:~/scripts/
+   25  echo $PATH
+   26  cd ~
+   27  mkdir Payment1
+   28  cd Payment1
+   29  mkdir logs configuration scripts
+   30  ls
+   31  touch Payment1/scripts/start.sh
+   32  touch scripts/start.sh
+   33  touch configuration/instance.properties
+   34  ls configutations
+   35  ls configurations
+   36  ls configuration
+   37  chmod 744 configuration/instance.properties
+   38  chmod 771 scripts/start.sh
+   39  cd ~
+   40  man cat > cat.output
+   41  ls
+   42  chmod 474 cat.output
+   43  cd ~
+   44  pwd
+   45  rmdir Payment1
+   46  rmdir -rf Payment1
+   47  rm -rf Payment1
+   48  ls
+   49  rm -i cat.output
+   50  ls
+   51  mkdir temp
+   52  MYTEMP=~/temp
+   53  echo $MYTEMP
+   54  unset MYTEMP
+   55  echo $MYTEMP
+   56  rmdir temp
+   57  l
+   58  ls
+   59  cd WileyEdge-Linux
+   60  history
+   61  history > JubinJoseph.220919.module4
