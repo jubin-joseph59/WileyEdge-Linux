@@ -1,0 +1,27 @@
+    1  clear
+    2  wget https://the-software-guild.s3.amazonaws.com/m3-prodsupport/2005-onl/linux/fixGenerator.sh
+    3  chmod 700 fixGenerator.sh 
+    4  ls -l
+    5  ./fixGenerator.sh &
+    6  [ec2-user@ip-172-31-11-241 ~]$
+    7  sed -i "s/\r//g" fixGenerator.sh
+    8  ls -l
+    9  ./fixGenerator.sh & 
+   10  sleep 10
+   11  sleep 500 &
+   12  sleep 700 &
+   13  jobs
+   14  fg %3
+   15  sleep 10 && echo "hello world" &
+   16  sleep 5; man ls
+   17  ls -l
+   18  grep -v 35=D fixlog* > fixlog.log
+   19  grep 35=D || grep 35=8 fixlog.log
+   20  grep 35=D fixlog.log || grep 35=8 fixlog.log
+   21  watch date
+   22  ./fixGenerator.sh & 
+   23  wc -l fixGenerator.sh
+   24  jobs
+   25  watch "wc -l fixlog*"
+   26  history
+   27  history > Jubin.Joseph.220921.module9
