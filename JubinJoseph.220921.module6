@@ -1,0 +1,55 @@
+    1  clear
+    2  ps -ef
+    3  echo $USER
+    4  logname
+    5  ps -ef | grep $USER
+    6  ps -ef | grep logname
+    7  ps -ef | grep `logname`
+    8  ps -ef | grep -v `logname`
+    9  ps -ef | grep -v $USER
+   10  man grep
+   11  ps -f $$
+   12  ps -f $$ f
+   13  echo $$
+   14  pstree -shapu $$
+   15  ps -eo user,pid,cmd
+   16  ps -eo pid > list
+   17  ls -l
+   18  sleep 300 &
+   19  ps -eo | grep S
+   20  ps -eo | grep S*
+   21  ps -ef | grep S
+   22  ps -ef | grep sleep
+   23  echo $!
+   24  kill $!
+   25  ps -ef | grep sleep
+   26  top
+   27  top -u root
+   28  top
+   29  ping yahoo.com
+   30  traceroute yahoo.com > yahoo.route
+   31  less yahoo.route
+   32  echo "yahoo.route has 23 hops for me" 
+   33  ln -s yahoo.route route
+   34  ls -l
+   35  netstat -a > output.txt
+   36  ls -l
+   37  cat output.txt 
+   38  mkdir network
+   39  ls -l
+   40  mv route output.txt network
+   41  cd network
+   42  ls -l
+   43  ls
+   44  cat route
+   45  echo route
+   46  cd route
+   47  cd ~
+   48  mv yahoo.route network
+   49  cd network
+   50  ls -l
+   51  cd route
+   52  cd
+   53  ifconfig
+   54  history
+   55  history > JubinJoseph.220921.module6
