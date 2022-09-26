@@ -1,0 +1,81 @@
+#!/bin/bash
+
+: ' 
+Author: Jubin Joseph
+Version: 1.0
+Description: User value Math functions
+
+'
+#All variables 
+declare -a num_array #declaring array for storage
+num_array=() #array to store the num
+num_input_count=0 #counter for while loop 
+
+while [ $num_input_count -lt 5 ] #while loop to input up to 5 values and validate the numbers
+do
+	echo -n "Enter value: " #enter the value
+	read number
+	if [[ $number =~ ^[0-9]+$ ]]; #number value validation
+	then
+		echo "$number is a integer" #validates that it is an integer
+		((num_input_count++)) #counter
+		num_array+=($number) #adds value to array
+	else
+		echo "$number is not either an integer or not between the parameters. Try again!" #statement if invalid value not entered
+	fi
+done
+
+echo -n "Do you want to keep inputting numbers? (Y to keep going, anything else to stop): " #question to keep going
+read choice
+while [[ $choice == "Y" || $choice == "y" ]] #while loop to continue adding numbers while doing validation
+do
+	echo -n "Enter value: "
+        read number
+        if [[ $number =~ ^[0-9]+$ ]];
+        then
+                echo "$number is a integer"
+                ((num_input_count++))
+                num_array+=($number)
+		if [ $num_input_count -eq 10 ] #if array length equals 10, break through the loop
+		then
+			break
+		fi
+        else
+                echo "$number is not either an integer or not between the parameters. Try again!"
+        fi
+	echo -n "Do you want to keep inputting numbers? (Y to keep going, anything else to stop): "
+	read choice
+done
+
+min_value=${num_array[0]} #variable to store min value from numbers (start at first value and work through array)
+max_value=${num_array[0]} #variable to store max value from numbers (start at first value and work through array)
+product_num=1 #variable for product of numbers
+average_num=0 #variable for average of numbers
+num_sum=0 #variable for sum of numbers
+
+for i in ${num_array[*]} #for loop to calculate sum, product, min and max 
+do
+	num_sum=$((num_sum + i))
+	product_num=$((product_num * i))
+	if [ $min_value -ge $i ]
+	then
+		min_value=$i
+	fi
+	if [ $max_value -le $i ]
+	then
+		max_value=$i
+	fi
+done
+
+average_num=$((num_sum / (num_input_count + 1))) #average calculation 
+
+# Output results 
+echo "Values entered:  ${num_array[*]}"
+echo "Product sum of values: $product_num"
+echo "Average of values: $average_num"
+echo "Sum of values: $num_sum"
+echo "Min of the values: $min_value"
+echo "Max of the values: $max_value"
+
+exit 0
+
