@@ -1,0 +1,50 @@
+#!/bin/bash
+
+: '
+
+Author: Jubin Joseph
+Version: 1.0
+Description: File Read and Sorting Script
+
+'
+declare -a order
+declare -a reverse_order
+order=()
+reverse_order=()
+file_path=/home/ec2-user/act11.txt
+
+if [[ -f "$file_path" ]];
+then
+        echo "The file used for this test exists"
+else
+        echo "The file used for this test doesn't exist"
+        exit 1
+fi
+
+while read line;
+do
+        data=$line 
+done < $file_path
+
+order=($data)
+
+echo "Original order: ${order[*]}"
+
+arr_length=${#order[*]}
+
+for (( i=$arr_length-1 ; i>=0 ; i--))
+do
+        value=${order[i]}
+        num_value=$((value))
+	reverse_order+=($num_value)
+
+done
+
+echo "Reverse order: ${reverse_order[*]}"
+
+uniqs_arr=($(tr ' ' '\n' <<<"${reverse_order[*]}" | awk '!u[$0]++' | tr '\n' ' '))
+
+echo "Final order with duplicates removed: ${uniqs_arr[*]}"
+
+exit 0
+
