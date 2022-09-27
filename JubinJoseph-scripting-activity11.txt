@@ -7,32 +7,32 @@ Version: 1.0
 Description: File Read and Sorting Script
 
 '
-declare -a order
-declare -a reverse_order
+declare -a order #Declare array for initial order of data from file
+declare -a reverse_order #declare array for reverse order of data in file 
 order=()
 reverse_order=()
-file_path=/home/ec2-user/act11.txt
+file_path=/home/ec2-user/act11.txt #file path to find the file (created file too) 
 
-if [[ -f "$file_path" ]];
+if [[ -f "$file_path" ]]; #statement to check if the file exists
 then
         echo "The file used for this test exists"
 else
-        echo "The file used for this test doesn't exist"
+        echo "The file used for this test doesn't exist" #statement to say if the file isn't found
         exit 1
 fi
 
-while read line;
+while read line; #while loop to read the file
 do
-        data=$line 
+        data+=$line #saving the lines into data variable
 done < $file_path
 
 order=($data)
 
-echo "Original order: ${order[*]}"
+echo "Original order: ${order[*]}" #printing out the original order
 
-arr_length=${#order[*]}
+arr_length=${#order[*]} #getting the length of how many values are present from the data
 
-for (( i=$arr_length-1 ; i>=0 ; i--))
+for (( i=$arr_length-1 ; i>=0 ; i-- )) #for loop to loop backwards of order and place it accordingly in reverse order
 do
         value=${order[i]}
         num_value=$((value))
@@ -40,11 +40,20 @@ do
 
 done
 
-echo "Reverse order: ${reverse_order[*]}"
+echo "Reverse order: ${reverse_order[*]}" #printing out the reverse order
 
-uniqs_arr=($(tr ' ' '\n' <<<"${reverse_order[*]}" | awk '!u[$0]++' | tr '\n' ' '))
+uniqs_arr=($(tr ' ' '\n' <<<"${reverse_order[*]}" | awk '!u[$0]++' | tr '\n' ' ')) #look through reverse order array and remove duplicates
 
-echo "Final order with duplicates removed: ${uniqs_arr[*]}"
+uniqs_arrlh=($(tr ' ' '\n' <<<"${reverse_order[*]}" | sort -nu | tr '\n' ' ')) #sort the reverse order array from lowest to highest
+
+uniqs_arrhl=($(tr ' ' '\n' <<<"${reverse_order[*]}" | sort -nur | tr '\n' ' ')) #sort the reverse order array from highest to lowest
+
+echo "Order with duplicates removed: ${uniqs_arr[*]}" #print out the unique array values after removing duplicates
+
+echo "Order from lowest to highest: ${uniqs_arrlh[*]}" #print out the unique array in order of lowest to highest
+
+echo "Order from highest to lowest: ${uniqs_arrhl[*]}" #print out the unique array in order of highest to lowest
 
 exit 0
+
 
